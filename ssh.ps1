@@ -14,6 +14,6 @@ if ($isOpenSSHInstalled -eq 0) {
 }
 else {
     Write-Host "OpenSSH is not installed. Installing..."
-    Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"& $installOpenSSHScriptPath`"" -Verb RunAs
+    & $installOpenSSHScriptPath
     
 }

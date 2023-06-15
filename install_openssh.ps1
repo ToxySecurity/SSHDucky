@@ -13,7 +13,7 @@ if (Test-Path $opensshInstallerPath) {
     Write-Host "Installing OpenSSH..."
 
     # Prompt for permission
-    Start-Process -FilePath "powershell.exe" -ArgumentList "-Command `"Start-Process -FilePath 'msiexec.exe' -ArgumentList '/i `"$opensshInstallerPath`" /qn' -Verb RunAs`"" -Verb RunAs -Wait
+    Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$opensshInstallerPath`" /qn" -Verb RunAs -Wait
 
     # Check if the installation was successful
     $isOpenSSHInstalled = Get-WindowsCapability -Online | Where-Object { $_.Name -like 'OpenSSH*' }

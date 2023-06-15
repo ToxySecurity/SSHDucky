@@ -40,12 +40,6 @@ STRING powershell -ExecutionPolicy Bypass -Command "Set-ExecutionPolicy RemoteSi
 ENTER
 DELAY 5000
 
-REM Giving Admin Rights
-LEFTARROW
-DELAY 100
-ENTER
-DElAY 3000
-
 REM Cleanup temporary files
 STRING Remove-Item "$env:TEMP\repo.zip" -Force
 ENTER
