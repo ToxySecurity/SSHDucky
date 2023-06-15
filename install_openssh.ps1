@@ -1,7 +1,3 @@
-# Set the execution policy to allow script execution without asking for permission
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-
-
 # Download the OpenSSH installer
 $opensshInstallerURL = "https://github.com/PowerShell/Win32-OpenSSH/releases/download/v9.2.2.0p1-Beta/OpenSSH-Win64-v9.2.2.0.msi"
 $opensshInstallerPath = "$PWD\OpenSSHInstaller.msi"
@@ -15,8 +11,9 @@ if (Test-Path $opensshInstallerPath) {
 
     # Install OpenSSH using the MSI installer with administrative permissions
     Write-Host "Installing OpenSSH..."
-    $msiArguments = "/i `"$opensshInstallerPath`" /qn"
-    Start-Process -FilePath "msiexec.exe" -ArgumentList $msiArguments -Wait
+
+    # Prompt for permission
+    Start-Process -FilePath "powershell.exe" -ArgumentList "-Command `"Start-Process -FilePath 'msiexec.exe' -ArgumentList '/i `"$opensshInstallerPath`" /qn' -Verb RunAs`"" -Verb RunAs -Wait
 
     # Check if the installation was successful
     $isOpenSSHInstalled = Get-WindowsCapability -Online | Where-Object { $_.Name -like 'OpenSSH*' }
