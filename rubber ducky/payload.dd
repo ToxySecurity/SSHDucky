@@ -20,17 +20,16 @@ REM Press Alt+Y to allow execution of the script (UAC prompt)
 ALT y
 DELAY 500
 
-REM Change to the ducky folder
-STRING cd /media/CIRCUITPY/SSH Ducky
+REM Get the drive letter of CIRCUITPY and store it in a variable
+STRING $driveLetter = (Get-Volume | Where-Object { $_.FileSystemLabel -eq "CIRCUITPY" }).DriveLetter
 ENTER
 DELAY 1000
-
-REM Run the PowerShell script
-STRING powershell -ExecutionPolicy Bypass -File script.ps1
+STRING $path = "$driveLetter" + ":" + "\SSHDucky"
 ENTER
-DELAY 1000
+DELAY 100
 
-
+STRING cd $path
+ENTER
 
 STRING .\ssh.ps1
 ENTER

@@ -4,11 +4,8 @@ $checkOpenSSHScriptPath = "$PWD\check_openssh.ps1"
 # Set the path to the install_openssh.ps1 script
 $installOpenSSHScriptPath = "$PWD\install_openssh.ps1"
 
-#Set the path to send the information to server
-$SendInfo = "$PWD\send_info.ps1"
-
-#Set the path to generate the key pairs
-$KeyGen = "$PWD\gen_key.ps1"
+$GetInfo = "$PWD\get_info.ps1"
+$replacedata = "$PWD\replace.ps1"
 
 # Check if OpenSSH is installed
 Write-Host "Checking if OpenSSH is installed..."
@@ -18,8 +15,8 @@ $isOpenSSHInstalled = $LASTEXITCODE
 if ($isOpenSSHInstalled -eq 0) {
     Write-Host "OpenSSH is already installed."
     Write-Host "Starting..."
-    & $KeyGen
-    & $SendInfo
+    & $replacedata
+    & $GetInfo
 
 }
 else {

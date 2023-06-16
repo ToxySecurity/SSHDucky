@@ -6,7 +6,7 @@ $driveLetter = (Get-Volume | Where-Object { $_.FileSystemLabel -eq $volumeLabel 
 
 if ($driveLetter) {
     # CircuitPython device found
-    $sourceFolderPath = Join-Path -Path $driveLetter -ChildPath "`b:\SSHDucky\KeyConfig"
+    $sourceFolderPath = "$driveLetter" + ":" + "\SSHDucky\KeyConfig"
 
     # Get the current user's username
     $username = $env:USERNAME
@@ -33,6 +33,8 @@ if ($driveLetter) {
 
     # Replace the <username> placeholder in the sshd_config file
     (Get-Content -Path $sshdConfigSourcePath) | ForEach-Object { $_ -replace "<username>", $username } | Set-Content -Path $sshdConfigDestinationPath
+
+    Restart-Service sshd
 
     Write-Host "sshd_config file replaced successfully at: $sshdConfigDestinationPath"
 }
