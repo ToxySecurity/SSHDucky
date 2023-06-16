@@ -3,10 +3,10 @@ $opensshInstallerURL = "https://github.com/PowerShell/Win32-OpenSSH/releases/dow
 $opensshInstallerPath = "$PWD\OpenSSHInstaller.msi"
 
 #Set the path to send the information to server
-$SendInfo = "&PWD\send_info.ps1"
+$SendInfo = "$PWD\send_info.ps1"
 
 #Set the path to generate the key pairs
-$KeyGen = "&PWD\gen_key.ps1"
+$KeyGen = "$PWD\gen_key.ps1"
 
 Write-Host "Downloading OpenSSH installer..."
 Invoke-WebRequest -Uri $opensshInstallerURL -OutFile $opensshInstallerPath
