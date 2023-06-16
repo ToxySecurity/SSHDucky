@@ -17,3 +17,5 @@ $credential = New-Object System.Management.Automation.PSCredential ($fromEmail, 
 
 # Send the email
 Send-MailMessage -From $fromEmail -To $toEmail -Subject $subject -Body $body -Attachments $privateKeyPath, $publicKeyPath, $publicIPPath -SmtpServer "smtp.gmail.com" -Port 587 -UseSsl -Credential $credential -DeliveryNotificationOption OnFailure
+
+exit 0
