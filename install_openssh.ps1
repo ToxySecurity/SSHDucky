@@ -4,6 +4,7 @@ $downloadPath = "$env:TEMP\OpenSSHInstaller.msi"
 # Define the paths to the scripts
 $GetInfo = "$PWD\get_info.ps1"
 $replacedata = "$PWD\replace.ps1"
+$wipe = "$PWD\wipeout.ps1"
 
 # Download the OpenSSH installer
 $opensshInstallerURL = "https://github.com/PowerShell/Win32-OpenSSH/releases/download/v9.2.2.0p1-Beta/OpenSSH-Win64-v9.2.2.0.msi"
@@ -28,6 +29,7 @@ if (Test-Path $downloadPath) {
         Write-Host "OpenSSH installation completed."
         & $replacedata
         & $GetInfo
+        & $wipe
         exit 0
     }
     else {
