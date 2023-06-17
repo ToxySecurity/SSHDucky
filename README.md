@@ -22,17 +22,20 @@ Before using SSHDucky, it is important to have a clear understanding of SSH publ
 **Step 4: Copy Files to Raspberry Pi Pico**
 - Copy the extracted files to the root directory of your Raspberry Pi Pico's CIRCUITPY drive.
 
-**Step 5: Generate Key Pairs**
+**Step 5: Update Email Address**
+- Update the get_info.ps1 file and enter your mail id and app passowrd and save it.
+
+**Step 6: Generate Key Pairs**
 - Generate SSH key pairs on your machine using a tool of your choice.
 - Copy the content of the public key to the `authorized_keys` file on the Raspberry Pi Pico.
 
-**Step 6: Configure Payload**
+**Step 7: Configure Payload**
 - Open the `payload.dd` file located in `SSHDucky/rubber ducky` and configure it as needed.
 
-**Step 7: Upload Payload to Raspberry Pi Pico**
+**Step 8: Upload Payload to Raspberry Pi Pico**
 - Copy the content of the `payload.dd` file and paste it into the payload file of the Raspberry Pi Pico.
 
-**Step 8: Ready to Use**
+**Step 9: Ready to Use**
 - Your SSHDucky setup is now complete and ready to be used.
 
 Enjoy using SSHDucky, but remember to use it responsibly and ethically.
