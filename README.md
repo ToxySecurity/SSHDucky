@@ -23,7 +23,7 @@ Before using SSHDucky, it is important to have a clear understanding of SSH publ
 - Copy the extracted files to the root directory of your Raspberry Pi Pico's CIRCUITPY drive.
 
 **Step 5: Update Email Address**
-- Update the get_info.ps1 file and enter your mail id and app passowrd and save it.
+- Update the 'get_info.ps1' file and enter your mail id and app passowrd and save it.
 
 **Step 6: Generate Key Pairs**
 - Generate SSH key pairs on your machine using a tool of your choice.
