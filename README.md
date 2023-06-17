@@ -8,7 +8,7 @@ SSHDucky is a project that utilizes the Raspberry Pi Pico microcontroller to cre
 Follow the steps below to set up the SSHDucky project:
 
 **Step 1: Setup the Pi Pico for HiD**
-- Refer to the documentation [here]([(https://github.com/dbisu/pico-ducky)]) for detailed instructions on setting up the Raspberry Pi Pico for Human Interface Device (HiD) emulation.
+- Refer to the documentation [here](https://github.com/dbisu/pico-ducky) for detailed instructions on setting up the Raspberry Pi Pico for Human Interface Device (HiD) emulation.
 
 **Step 2: Download SSHDucky ZIP**
 - Download the SSHDucky ZIP file from the project repository.
