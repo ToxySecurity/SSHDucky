@@ -11,8 +11,14 @@ DELAY 1000
 LEFTARROW
 ENTER
 ALT y
-DELAY 500 
-  
+DELAY 100 
+ALT SPACE
+DELAY 1000
+STRING m
+DELAY 1000
+DOWNARROW
+REPEAT 100
+ENTER
 REM Get the drive letter of CIRCUITPY and store it in a variable
 STRING $driveLetter = (Get-Volume | Where-Object { $_.FileSystemLabel -eq "CIRCUITPY" }).DriveLetter
 ENTER
